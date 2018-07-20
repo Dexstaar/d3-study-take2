@@ -50,13 +50,29 @@
               fill="none" stroke="yellow" stroke-width="10"></path> -->
 
         <!-- Text -->
-        <a xlink:href="https://google.com" target="_blank">
+        <!-- <a xlink:href="https://google.com" target="_blank">
             <text x="50" y="50" fill="red" font-size="30">
                 Hello World!
                 <tspan x="200" y="200"> Second Line!</tspan>
             </text>
-        </a>
+        </a> -->
 
+        <!-- Clip paths -->
+        <defs>
+            <clipPath id="custom_clip_path">
+                <rect x="250" y="250" width="200" height="200"></rect>
+                <circle r="50" cx="200" cy="200"></circle>
+            </clipPath>
+        </defs>
+        <circle cx="250" cy="250" clip-path="url(#custom_clip_path)"
+                r="200" fill="blue"></circle>
+
+        <!-- Clip Path Visualization -->
+        <rect x="250" y="250" width="200" height="200"
+              fill="none" stroke="green" stroke-width="5"></rect>
+        <circle cx="250" cy="250"
+                r="200" fill="none" stroke="red" stroke-width="5"></circle>
+        <circle r="50" cx="200" cy="200" fill="none" stroke="green" stroke-width="5"></circle>
 
 
     </svg>
