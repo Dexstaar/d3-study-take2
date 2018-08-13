@@ -37,6 +37,12 @@ var r_scale = d3.scaleLinear()
     })])
     .range([5, 30]);
 
+var a_scale = d3.scaleSqrt()
+    .domain([0, d3.max(data, function(d) {
+        return d[1];
+    })])
+    .range([0, 25]);
+
 
 // Create Circles
 svg.selectAll('circle')
@@ -50,7 +56,7 @@ svg.selectAll('circle')
         return y_scale(d[1]);
     })
     .attr('r', function(d) {
-        return d[1] / 10;
+        return a_scale(d[1]);
     })
     .attr('fill', '#D1AB0E');
 
